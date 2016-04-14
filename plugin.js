@@ -1,11 +1,13 @@
-CKEDITOR.plugins.add( 'SimpleLink', {
+CKEDITOR.plugins.add( 'simplelink', {
+    requires: 'dialog',
     icons: 'simplelink',
+    lang: 'en,pl',
     init: function( editor ) {
         editor.addCommand( 'simplelink', new CKEDITOR.dialogCommand( 'simplelinkDialog' ) );
         editor.ui.addButton( 'SimpleLink', {
-            label: 'Add a link',
+            label:  editor.lang.simplelink.insertLink ,
             icons: 'simplelink',
-            command: 'simplelink'
+            command: 'simplelink',
         });
 
         CKEDITOR.dialog.add( 'simplelinkDialog', this.path + 'dialogs/simplelink.js' );
